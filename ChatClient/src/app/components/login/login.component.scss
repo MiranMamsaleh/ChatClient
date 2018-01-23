@@ -1,0 +1,31 @@
+.intro-2 {
+    background: url("https://www.linz.at/images/lentos5.jpg")no-repeat center center;
+    background-size: cover;
+}
+.top-nav-collapse {
+    background-color: #ff8a65 !important; 
+}
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #ff8a65 !important;
+    } 
+}
+.md-form .prefix {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+h6 {
+    line-height: 1.7;
+}
+@media (max-width: 740px) {
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+        height: 1150px; 
+    } 
+}
+  
