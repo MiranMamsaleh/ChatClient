@@ -1,0 +1,59 @@
+.MyChat{
+    background-image: "./assets/img/background.jpg";
+}
+.Mycontainer {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.SideNavBar{
+    padding-left: 240px;
+}
+.Mycontainer::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.Mycontainer img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.Mycontainer img.right {
+    float: right;
+}
+
+.time-right {
+    float: right;
+    color: rgb(0, 0, 0);
+}
+
+.time-left {
+    float: left;
+    color: rgb(0, 0, 0);
+}
+.darker {
+    border-color: rgb(131, 131, 131);
+    background-color: #ffebee;
+}
+
+.text-right{
+    text-align:  right;
+}
+.text-left{
+    text-align:  left;
+}
+
+.chatInput{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;   
+}

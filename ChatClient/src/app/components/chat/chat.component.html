@@ -1,0 +1,26 @@
+<div class="MyChat">
+  <div *ngFor="let message of group.messages">
+    <div *ngIf="isCurrentUser(message)">
+      <div class="Mycontainer z-depth-2">
+        <img src="./assets/img/icons/person-male.png" alt="Avatar" style="width:100%;" class="img-fluid" alt="Responsive image">
+        <p class="text-right">{{getMessage(message.message)}}</p>
+        <span class="time-right">{{getDate(message.timestamp)}}</span>
+      </div>
+    </div>
+    <div *ngIf=!isCurrentUser(message)>
+      <div class="Mycontainer darker z-depth-2">
+        <img src="./assets/img/icons/person-female.png" alt="Avatar" style="width:100%;" class="img-fluid right" alt="Responsive image">
+        <p class="text-left">{{getMessage(message.message)}}</p>
+        <span class="time-left">{{getDate(message.timestamp)}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="chatInput">
+  <div class="md-form input-group">
+    <input type="search" class="form-control" placeholder="Enter Message..." [(ngModel)]="chatMessage" name="ChatMessage">
+    <span class="input-group-btn">
+      <button class="btn btn-primary btn-lg waves-light" type="button" (click)="sendMessage()" mdbRippleRadius>Send</button>
+    </span>
+  </div>
+</div>

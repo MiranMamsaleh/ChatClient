@@ -1,0 +1,16 @@
+[
+	{
+		"_id": "5a66e681e120c122847662bb",
+		"username": "Miran",
+		"lastSeen": "2018-01-30T12:00:40.337Z",
+		"onlineState": false,
+		"status": "Now or Never"
+	},
+	{
+		"_id": "5a66e681e120c122847662bd",
+		"username": "Lucas",
+		"lastSeen": "2018-01-28T08:30:40.337Z",
+		"onlineState": false,
+		"status": "Now Never"
+	}
+]

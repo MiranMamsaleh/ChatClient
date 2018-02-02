@@ -1,0 +1,35 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark red lighten-1">
+  <logo>
+    <a class="navbar-brand" href="#">Bonding</a>
+  </logo>
+  <links>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" (click)="redirectToFriends()" mdbRippleRadius>Friends
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbRippleRadius>Logout
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline  waves-light" mdbRippleRadius>
+      <input class="form-control mr-sm-2" [(ngModel)]="searchString" type="text" placeholder="Search" name="search">
+    </form>
+  </links>
+</mdb-navbar>
+<div class="list-group">
+  <div *ngFor="let group of groups">
+    <div *ngIf="matchesFilter(group)">
+      <a (click)="redirectToChat(group)" class="list-group-item list-group-item-action flex-column align-items-start red lighten-5">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{group.groupName}}</h5>
+          <small class="text-muted">{{getDate(group.messages[0].timestamp)}}</small>
+        </div>
+        <small class="text-muted">{{getMessage(group.messages[0].message)}}</small>
+      </a>
+    </div>
+  </div>
+</div>

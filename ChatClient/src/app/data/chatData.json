@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "5a68443085f0ad4f3f6bcc2c",
+    "groupName": "Mofoggos",
+    "users": [
+      {
+        "_id": "5a66e681e120c122847662bb"
+      }
+    ],
+    "admins": [
+      {
+        "_id": "5a66e681e120c122847662bb"
+      }
+    ],
+    "messages": [
+      {
+        "_id": "5a68443085f0ad4f3f6bcc2b",
+        "creator": "5a66f0bf065fee2bf5855ea1",
+        "message": "5a66e681e120c122847662bb joined the group!",
+        "timestamp": "2018-01-24T08:30:40.337Z"
+      },
+      {
+        "_id": "5a68443085f0ad4f3f6bcc2a",
+        "creator": "5a66f0bf065fee2bf5855ea2",
+        "message": "5a5e664c3705724ad822795d joined the group!",
+        "timestamp": "2018-01-24T08:30:40.337Z"
+      },
+      {
+        "_id": "5a68443085f0ad4f3f6bcc2a",
+        "creator": "5a66f0bf065fee2bf5855ea2",
+        "message": "Test Message",
+        "timestamp": "2018-01-24T08:30:40.337Z"
+      }
+    ]
+  }
+]
