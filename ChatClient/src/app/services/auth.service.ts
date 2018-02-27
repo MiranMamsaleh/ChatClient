@@ -10,11 +10,11 @@ export class AuthService {
   constructor(public http: HttpClient) { }
 
   userLogin(username: string, password: string) {
-    return this.http.post<Response>('http://localhost:3000/login', new LoginDto(username, password));
+    return this.http.post<Response>('https://peaceful-ridge-95928.herokuapp.com/login', new LoginDto(username, password));
   }
 
   userRegister(username: string, password: string, repassword: string) {
-    return this.http.post<Response>('http://localhost:3000/register', new RegisterDto(username, password, repassword));
+    return this.http.post<Response>('https://peaceful-ridge-95928.herokuapp.com/register', new RegisterDto(username, password, repassword));
   }
 
 }

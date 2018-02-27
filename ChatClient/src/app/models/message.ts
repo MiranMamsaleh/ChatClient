@@ -4,6 +4,7 @@ export class Message {
         public _id: string = "",
         public creator: string = "",
         public message: string = "",
-        public timestamp: string = ""
+        public timestamp: string = "",
+        public room: string = ""
     ) { }
 }

@@ -1,26 +1,36 @@
-<div class="MyChat">
-  <div *ngFor="let message of group.messages">
-    <div *ngIf="isCurrentUser(message)">
-      <div class="Mycontainer z-depth-2">
-        <img src="./assets/img/icons/person-male.png" alt="Avatar" style="width:100%;" class="img-fluid" alt="Responsive image">
-        <p class="text-right">{{getMessage(message.message)}}</p>
-        <span class="time-right">{{getDate(message.timestamp)}}</span>
+<div ngx-auto-scroll lock-y-offset="10" observe-attributes>
+  <div class="MyChat">
+
+    <div *ngFor="let message of group.messages">
+
+      <div *ngIf="isCurrentUser(message)">
+        <div class="Mycontainer z-depth-2">
+          <img src="./assets/img/icons/person-male.png" alt="Avatar" style="width:100%;" class="img-fluid" alt="Responsive image">
+          <p class="text-right font-weight-bold">{{getMessage(message.message)}}</p>
+          <span class="font-italic">{{getName(message)}}</span>
+          <span class="time-right font-italic">{{getDate(message.timestamp)}}</span>
+        </div>
       </div>
-    </div>
-    <div *ngIf=!isCurrentUser(message)>
-      <div class="Mycontainer darker z-depth-2">
-        <img src="./assets/img/icons/person-female.png" alt="Avatar" style="width:100%;" class="img-fluid right" alt="Responsive image">
-        <p class="text-left">{{getMessage(message.message)}}</p>
-        <span class="time-left">{{getDate(message.timestamp)}}</span>
+
+      <div *ngIf=!isCurrentUser(message)>
+        <div class="Mycontainer darker z-depth-2">
+          <img src="./assets/img/icons/person-female.png" alt="Avatar" style="width:100%;" class="img-fluid right" alt="Responsive image">
+          <p class="text-left font-weight-bold">{{getMessage(message.message)}}</p>
+          <span class="font-italic" style="float :right;">{{getName(message)}}</span>
+          <span class="time-left font-italic">{{getDate(message.timestamp)}}</span>
+        </div>
       </div>
+
     </div>
+
   </div>
-</div>
-<div class="chatInput">
-  <div class="md-form input-group">
-    <input type="search" class="form-control" placeholder="Enter Message..." [(ngModel)]="chatMessage" name="ChatMessage">
-    <span class="input-group-btn">
-      <button class="btn btn-primary btn-lg waves-light" type="button" (click)="sendMessage()" mdbRippleRadius>Send</button>
-    </span>
+
+  <div class="chatInput">
+    <div class="md-form input-group">
+      <input type="search" class="form-control" placeholder="Enter Message..." [(ngModel)]="chatMessage" name="ChatMessage">
+      <span class="input-group-btn">
+        <button class="btn btn-primary btn-lg waves-light" type="button" (click)="sendMessage()" mdbRippleRadius>Send</button>
+      </span>
+    </div>
   </div>
 </div>

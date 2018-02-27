@@ -1,3 +1,5 @@
+import { TokenService } from './../../services/token.service';
+import { WebSocketService } from './../../services/web-socket.service';
 import { Router } from '@angular/router';
 
 import { User } from './../../models/user';
@@ -12,17 +14,23 @@ import { Group } from '../../models/group';
 })
 export class FriendsComponent implements OnInit {
   rest: RestService;
-  friends: User[];
+  friends = new Array<User>();
   searchString: string = "";
   router: Router;
+  wsService: WebSocketService;
+  tokenService: TokenService;
 
-  constructor(rest: RestService, router: Router) {
+  constructor(rest: RestService, router: Router, wsService: WebSocketService, tokenService: TokenService) {
     this.rest = rest;
     this.router = router;
+    this.wsService = wsService;
+    this.tokenService = tokenService;
   }
 
   ngOnInit() {
-    this.rest.getFriends().subscribe(data => {
+    this.wsService.loadFriends();
+    this.wsService.getFriends().subscribe(data => {
+      console.log(data);
       this.friends = data;
     });
   }
@@ -58,5 +66,10 @@ export class FriendsComponent implements OnInit {
 
   redirectToChats() {
     this.router.navigate(['Chats']);
+  }
+
+  logout() {
+    this.tokenService.deleteToken();
+    this.router.navigate(['Login']);
   }
 }

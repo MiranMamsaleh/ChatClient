@@ -8,11 +8,11 @@ export class ChatService {
 
   message: Subject<any>
   constructor(private webSocketService: WebSocketService) {
-    this.message = <Subject<any>>webSocketService
+    /*this.message = <Subject<any>>webSocketService
       .connect()
       .map((response: any): any => {
         return response;
-      })
+      })*/
 
   }
 
